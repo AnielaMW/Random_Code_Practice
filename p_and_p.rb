@@ -9,9 +9,8 @@ class Man
 
   def initialize (name, single, fortune)
     @fortune = fortune
-    @name = name
     @single = single
-    @truth = "Mr. #{@name} " + self.acknowledge
+    @truth = "Mr. #{name} " + self.acknowledge
   end
 
   def acknowledge
