@@ -30,6 +30,24 @@ array = []
 string.split('').map{|i| array.unshift(i)}
 puts array.join('')
 
+puts "Sort Check"
+# create method called is_sorted
+# return true if numbers are sorted
+
+def is_sorted(arr)
+  sorted = true
+  arr.map.with_index{ |n, i|
+    if i > 0; unless n >= arr[i-1]; sorted = false; break end end}
+  sorted
+end
+
+numbers1 = [1,4,1,2,6,3,3]
+numbers2 = [1,2,3,4,5,6,7]
+numbers3 = [1,2,3,4,5,4,7]
+puts is_sorted(numbers1)
+puts is_sorted(numbers2)
+puts is_sorted(numbers3)
+
 puts "Bow Wownder Challenge"
 # make dog move along an axis \^, v, <, >, diagonally
 # dog has to face the correct direction
