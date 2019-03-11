@@ -20,3 +20,12 @@ array = []
   end
 end
 puts array.join(", ")
+
+puts ""
+puts "Reverse String"
+# reverse the string without using .reverse
+string = "gnirts a si sihT"
+array = []
+
+string.split('').map{|i| array.unshift(i)}
+puts array.join('')
