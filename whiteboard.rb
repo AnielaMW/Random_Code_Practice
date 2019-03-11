@@ -1,19 +1,22 @@
 require "pry"
 
+puts "FizzBuzz"
 # create a loop that goes from 1 to 100
 # print each iteration
 # if else logic x3 "fizz"
 # x5 "buzz"
 # x3 and X5 "fizz buzz"
 
+array = []
 (1..100).each do |i|
   if i%3 == 0 && i%5 == 0
-    puts "fizz buzz"
+    array.push("fizz buzz")
   elsif i%3 == 0
-    puts "fizz"
+    array.push("fizz")
   elsif i%5 == 0
-    puts "buzz"
+    array.push("buzz")
   else
-    puts i
+    array.push(i)
   end
 end
+puts array.join(", ")
