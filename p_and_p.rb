@@ -18,15 +18,11 @@ class Man
   end
 end
 
-darcy = Man.new("Darcy", true, "good income")
-puts darcy.truth
-bingley = Man.new("Bingley", true, "good will toward all and a good income")
-puts bingley.truth
-collins = Man.new("Collins", true, "good patroness")
-puts collins.truth
-wickham = Man.new("Wickham", true, "good luck as a good liar")
-puts wickham.truth
-denny = Man.new("Denny", true, "charming gentleman")
-puts denny.truth
-Bennet = Man.new("Bennet", false, "good humor")
-puts Bennet.truth
+men = [["Darcy", true, "good income"],
+       ["Bingley", true, "good will toward all and a good income"],
+       ["Collins", true, "good patroness"],
+       ["Wickham", true, "good luck as a good liar"],
+       ["Denny", true, "charming gentleman"],
+       ["Bennet", false, "good humor"]]
+
+men.each { |man| puts Man.new(man[0], man[1], man[2]).truth }
