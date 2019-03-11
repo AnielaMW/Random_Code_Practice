@@ -30,6 +30,14 @@ array = []
 string.split('').map{|i| array.unshift(i)}
 puts array.join('')
 
+puts "Bow Wownder Challenge"
+# make dog move along an axis \^, v, <, >, diagonally
+# dog has to face the correct direction
+# dog is class
+# methods to turn
+# methods to move forward
+# return dogs coords
+
 class Dog
   attr_accessor :coords, :facing
 
