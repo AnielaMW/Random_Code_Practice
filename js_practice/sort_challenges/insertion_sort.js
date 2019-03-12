@@ -22,8 +22,7 @@ let sort_arr = (arr) => {
       i--;
     }
   }
-
-
+  
   return arr;
 };
 
