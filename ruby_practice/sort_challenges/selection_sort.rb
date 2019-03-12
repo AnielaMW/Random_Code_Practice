@@ -16,7 +16,6 @@ def selection_sort(arr)
   n.times do |i|
     min_index = i
     for j in (i + 1)..n
-      binding.pry
       min_index = j if arr[j] < arr[min_index]
     end
     arr[i], arr[min_index] = arr[min_index], arr[i] if min_index != i
