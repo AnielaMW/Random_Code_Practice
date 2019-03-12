@@ -1,16 +1,27 @@
-consol.log("Quick Sort");
+console.log("Quick Sort");
 
 // 1. First, our checks to see if array.length <= 1.
-// 2. Pick a pivot at random. Ruby’s delete_at method will delete the item at the specified index, which in this case would be a rand index in the range of array.length. We’re saving the value of that item to pivot.
+// 2. Pick a pivot at random.
 // 3. Create a new left and right subarray.
 // 4. Loop through every element in the array and compare it to the pivot. If the value is less than pivot, add element to the left subarray. If value is greater than pivot, add element to the right subarray.
 
-let sort_arr = (arr) => {
+let quick_sort = (arr) => {
   if (arr.length < 2) return arr;
 
+  let pivot = arr[(Math.floor(Math.random()*arr.length))];
+  let left_arr = [];
+  let right_arr = [];
+
+  arr.forEach (x => {
+    if (x < pivot){
+      left_arr.push(x);
+    } else if (x > pivot) {
+      right_arr.push(x);
+    }
+  });
 
 
-  return arr;
+  return quick_sort(left_arr).concat([pivot], quick_sort(right_arr));
 };
 
 let check_answer = (arr_a, arr_b) => {
@@ -23,10 +34,10 @@ let check_answer = (arr_a, arr_b) => {
 };
 
 let answer = ["a", "b", "c", "d"];
-console.log(check_answer(sort_arr([]), []));
-console.log(check_answer(sort_arr(["a"]), ["a"]));
-console.log(check_answer(sort_arr(["a", "b", "c", "d"]), answer));
-console.log(check_answer(sort_arr(["b", "c", "d", "a"]), answer));
-console.log(check_answer(sort_arr(["c", "b", "a", "d"]), answer));
-console.log(check_answer(sort_arr(["d", "c", "b", "a"]), answer));
-console.log(check_answer(sort_arr(["c", "d", "a", "b"]), answer));
+console.log(check_answer(quick_sort([]), []));
+console.log(check_answer(quick_sort(["a"]), ["a"]));
+console.log(check_answer(quick_sort(["a", "b", "c", "d"]), answer));
+console.log(check_answer(quick_sort(["b", "c", "d", "a"]), answer));
+console.log(check_answer(quick_sort(["c", "b", "a", "d"]), answer));
+console.log(check_answer(quick_sort(["d", "c", "b", "a"]), answer));
+console.log(check_answer(quick_sort(["c", "d", "a", "b"]), answer));
