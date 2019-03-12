@@ -11,7 +11,20 @@ console.log("Bubble Sort");
 let bubble_sort = (arr) => {
   if (arr.length < 2) return arr;
 
+  let swap = true;
 
+  while (swap === true) {
+    swap = false;
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > arr[i+1]) {
+        swap = true;
+        let x = arr[i];
+        let y = arr[i+1];
+        arr[i+1] = x;
+        arr[i] = y;
+      }
+    }
+  }
 
   return arr;
 };
@@ -19,9 +32,10 @@ let bubble_sort = (arr) => {
 let check_answer = (arr_a, arr_b) => {
   if (arr_a.length !== arr_b.length) return false;
 
-  for (let i = 0; i < arr_a.length; i++){
+  for (let i = 0; i < arr_a.length; i++) {
     if (arr_a[i] !== arr_b[i]) return false;
   }
+  
   return true;
 };
 
