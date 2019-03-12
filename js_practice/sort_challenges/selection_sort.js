@@ -7,10 +7,25 @@ console.log("Selection Sort");
 // 5. If value of new min_index is not equal to value of element at i then swap value of element at i index with value of element at min_index.
 // 6. Lastly, return the manipulated array.
 
-let sort_arr = (arr) => {
+let selection_sort = (arr) => {
   if (arr.length < 2) return arr;
 
+  for (let i = 0; i < arr.length; i++) {
+    let min_index = i;
 
+    for (let j = i; j < arr.length; j++) {
+      if (arr[j] < arr[min_index]) {
+        min_index = j;
+      }
+    }
+
+    if (min_index != i) {
+      let x = arr[i];
+      let y = arr[min_index];
+      arr[min_index] = x;
+      arr[i] = y;
+    }
+  }
 
   return arr;
 };
@@ -25,10 +40,10 @@ let check_answer = (arr_a, arr_b) => {
 };
 
 let answer = ["a", "b", "c", "d"];
-console.log(check_answer(sort_arr([]), []));
-console.log(check_answer(sort_arr(["a"]), ["a"]));
-console.log(check_answer(sort_arr(["a", "b", "c", "d"]), answer));
-console.log(check_answer(sort_arr(["b", "c", "d", "a"]), answer));
-console.log(check_answer(sort_arr(["c", "b", "a", "d"]), answer));
-console.log(check_answer(sort_arr(["d", "c", "b", "a"]), answer));
-console.log(check_answer(sort_arr(["c", "d", "a", "b"]), answer));
+console.log(check_answer(selection_sort([]), []));
+console.log(check_answer(selection_sort(["a"]), ["a"]));
+console.log(check_answer(selection_sort(["a", "b", "c", "d"]), answer));
+console.log(check_answer(selection_sort(["b", "c", "d", "a"]), answer));
+console.log(check_answer(selection_sort(["c", "b", "a", "d"]), answer));
+console.log(check_answer(selection_sort(["d", "c", "b", "a"]), answer));
+console.log(check_answer(selection_sort(["c", "d", "a", "b"]), answer));
