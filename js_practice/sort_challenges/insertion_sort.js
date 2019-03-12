@@ -9,6 +9,19 @@ console.log("Insertion Sort");
 let sort_arr = (arr) => {
   if (arr.length < 2) return arr;
 
+  for (let i = 0; i < arr.length; i++) {
+    while (i > 0) {
+      let x = arr[i];
+      let y = arr[i-1];
+      if (x < y) {
+        arr[i-1] = x;
+        arr[i] = y;
+      } else {
+        break;
+      }
+      i--;
+    }
+  }
 
 
   return arr;
