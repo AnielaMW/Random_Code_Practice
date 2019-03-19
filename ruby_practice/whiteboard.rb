@@ -148,3 +148,8 @@ dulce.turn("r")
 dulce.move
 dulce.move
 dulce.move
+
+
+puts "3 and 5 of N"
+# print the sum of all number divisable by 3 and 5 under the number N
+puts (3...10).inject{|sum, e| (e%3==0 || e%5==0) ? sum += e : sum += 0; }
