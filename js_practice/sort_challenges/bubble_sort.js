@@ -1,6 +1,6 @@
 console.log("Bubble Sort");
 
-// 1. bubble_sort takes in a single array parameter.
+// 1. bubble_sort takes in a single array as the parameter.
 // 2. If the array size is 1 or 0, return the array; by default, an empty array or array with one element is sorted.
 // 3. Create the swap variable and set it to true by default.
 // 4. Create a while loop that will run as long as swap is true.
